@@ -41,7 +41,7 @@ class LoginController extends Controller
         else if(Auth::guard('dsn')->attempt($credentials)){
 
             $request->session()->regenerate();
-            return redirect()->intended('dosen/dashboard_dsn');
+            return redirect()->intended('dosenwali/dashboard_dsn');
         }
         else if(Auth::guard('dpt')->attempt($credentials)){
 

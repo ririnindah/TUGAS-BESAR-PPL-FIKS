@@ -193,9 +193,11 @@
                         <li>
                             <a class="nav-link custom-nav-link" href="#"><i class="fa fa-fw fa-columns"></i>PKL</a>
                         </li>
+
                     </ul>
-
-
+                    </li>
+                    <li>
+                        <a href="#"><i  class="fa fa-fw fa-columns"></i> Pencarian Progress Studi</a>
                     </li>
                 </ul>
             </div>
