@@ -125,7 +125,7 @@
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="#">
+            <a href="/logout">
               <i class="fa fa-fw fa-power-off"></i> Log Out </a>
           </li>
         </ul>

@@ -20,6 +20,8 @@ use PHPUnit\Framework\Attributes\Group;
 Route::get('/',[LoginController::class,'index']);
 Route::post('/',[LoginController::class,'authenticate']);
 
+Route::get('/logout',[LoginController::class,'getLogout']);
+
 //opt
 
 // Route::middleware(['isOperator'])->group(function(){

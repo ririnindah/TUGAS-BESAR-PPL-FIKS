@@ -37,7 +37,7 @@
           <h1 class="page-header"> Generate </h1>
           <ol class="breadcrumb">
             <li class="active">
-              <i class="fa fa-dashboard"></i> Dashboard/ <i class="fa fa-tasks"></i> Generate Akun Mahasiswa
+              <i class="fa fa-dashboard"></i> <a href="{{ route('dashboard_opt') }}">Dashboard/</a> <i class="fa fa-tasks"></i> <a href="{{ route('generate') }}"></a>Generate Akun Mahasiswa
             </li>
           </ol>
         </div>
