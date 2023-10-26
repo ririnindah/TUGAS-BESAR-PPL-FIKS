@@ -23,7 +23,7 @@ use App\Http\Controllers\MahasiswaController;
 Route::get('/',[LoginController::class,'index']);
 Route::post('/',[LoginController::class,'authenticate']);
 
-Route::get('/logout',[LoginController::class,'getLogout']);
+Route::get('/logout',[LoginController::class,'getLogout'])->middleware('guest');
 
 //opt
 
