@@ -2,23 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\operator;
-use App\Http\Requests\StoreoperatorRequest;
-use App\Http\Requests\UpdateoperatorRequest;
+use App\Models\mahasiswa;
+use Illuminate\Http\Request;
 
-class OperatorController extends Controller
-{   
-    
+class MahasiswaController extends Controller
+{
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('operator/dashboard_opt');
-    }
-    public function generate()
-    {
-        return view('operator.generate');
+        //
     }
 
     /**
@@ -32,7 +26,7 @@ class OperatorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store()
+    public function store(Request $request)
     {
         //
     }
@@ -40,7 +34,7 @@ class OperatorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(mahasiswa $mahasiswa)
     {
         //
     }
@@ -48,7 +42,7 @@ class OperatorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit(mahasiswa $mahasiswa)
     {
         //
     }
@@ -56,7 +50,7 @@ class OperatorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update()
+    public function update(Request $request, mahasiswa $mahasiswa)
     {
         //
     }
@@ -64,7 +58,7 @@ class OperatorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy()
+    public function destroy(mahasiswa $mahasiswa)
     {
         //
     }

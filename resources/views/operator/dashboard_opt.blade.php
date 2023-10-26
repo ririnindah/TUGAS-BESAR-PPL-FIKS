@@ -1,5 +1,5 @@
-@extends('template') @section('content') 
-{{-- @dd(Auth::user()); --}}
+@extends('template') @section('content')
+{{ dd(Auth::guard('opt')->user()) }}
 <div id="wrapper">
   <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

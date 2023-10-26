@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OperatorController;
+use App\Http\Middleware\isOperator;
+use PHPUnit\Framework\Attributes\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,14 @@ Route::get('/',[LoginController::class,'index']);
 Route::post('/',[LoginController::class,'authenticate']);
 
 //opt
+// Route::middleware(['isOperator'])->group(function(){
+//     Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
+//     Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('generate');
+// });
 
-    Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
-    Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('generate');
+Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
+Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('generate');
+    
 
 
 
