@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class isDepartemen
 {
@@ -16,7 +17,7 @@ class isDepartemen
     public function handle(Request $request, Closure $next): Response
     {
 
-        if(!auth()->check() || auth()->User()->role != 'departemen'){
+        if(!Auth::guard('dpt')->check() || Auth::guard('dpt')->user()->role != 'departemen'){
             abort(403);
         }
         return $next($request);

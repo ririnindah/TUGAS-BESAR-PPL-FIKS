@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\departemen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DepartemenController extends Controller
 {
@@ -12,7 +13,9 @@ class DepartemenController extends Controller
      */
     public function index()
     {
-        //
+        $attribute=Auth::guard('dpt')->user();
+        // dd($attribute);
+        return view('departemen/dashboard_dpt',['attribute'=>$attribute]);
     }
 
     /**

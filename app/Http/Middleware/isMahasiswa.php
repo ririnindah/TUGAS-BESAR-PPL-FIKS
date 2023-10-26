@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class isMahasiswa
 {
@@ -17,7 +18,7 @@ class isMahasiswa
 
     {
 
-        if(!auth()->check() || auth()->User()->role != 'mahasiswa'){
+        if(!Auth::guard('mhs')->check() || Auth::guard('mhs')->user()->role !== 'mahasiswa'){
             abort(403);
         }
 

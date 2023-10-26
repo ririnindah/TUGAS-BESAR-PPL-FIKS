@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\dosenwali;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DosenwaliController extends Controller
 {
@@ -12,7 +13,9 @@ class DosenwaliController extends Controller
      */
     public function index()
     {
-        //
+        $attribute=Auth::guard('dsn')->user();
+        // dd($attribute);
+        return view('dosenwali/dashboard_dsn',['attribute'=>$attribute]);
     }
 
     /**
