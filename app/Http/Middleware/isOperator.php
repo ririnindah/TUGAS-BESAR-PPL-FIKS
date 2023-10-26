@@ -15,9 +15,10 @@ class isOperator
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
-        if (!auth()->check() || auth()->user()->role !== 'operator') {
+        // dd(!Auth::guard('opt')->check() || Auth::guard('opt')->user()->role !== 'operator');
+        if (!Auth::guard('opt')->check() || Auth::guard('opt')->user()->role !== 'operator') {
             abort(403);
         }
 
