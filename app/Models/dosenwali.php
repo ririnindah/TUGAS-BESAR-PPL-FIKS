@@ -8,14 +8,14 @@ use Illuminate\Foundation\Auth\User as Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class operator extends Model
+class dosenwali extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $guarded = [
         'id'
     ];
-    protected $table = 'operators';
+    protected $table = 'dosenwalis';
 
     protected $hidden = [
         'password',

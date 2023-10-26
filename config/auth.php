@@ -48,6 +48,14 @@ return [
             'driver' => 'session',
             'provider' => 'mahasiswa',
         ],
+        'dsn' => [
+            'driver' => 'session',
+            'provider' => 'dosenwali',
+        ],
+        'dpt' => [
+            'driver' => 'session',
+            'provider' => 'departement',
+        ],
     ],
 
     /*
@@ -80,6 +88,14 @@ return [
         'mahasiswa' => [
             'driver' => 'eloquent',
             'model' => App\Models\mahasiswa::class,
+        ],
+        'dosenwali' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\dosenwali::class,
+        ],
+        'departemen' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\departemen::class,
         ],
     ],
 

@@ -21,6 +21,7 @@ Route::get('/',[LoginController::class,'index']);
 Route::post('/',[LoginController::class,'authenticate']);
 
 //opt
+
 // Route::middleware(['isOperator'])->group(function(){
 //     Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
 //     Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('generate');
@@ -32,9 +33,12 @@ Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('
 
 
 
-/*mhs*/
-Route::middleware(['isMahasiswa'])->group(function(){
-    Route::get('mahasiswa/dashboard_mhs',[MahasiswaController::class, 'index'])-> name('dashboard_mhs');
-    // Route::get('mahasiswa/update_mhs',[MahasiswaController::class, 'update_mhs'])-> name('update_mhs');
-    // Route::get('mahasiswa/irs',[MahasiswaController::class, 'irs'])-> name('irs');
-});
+//mhs
+
+// Route::middleware(['isMahasiswa'])->group(function(){
+//     Route::get('mahasiswa/dashboard_mhs',[MahasiswaController::class, 'index'])-> name('dashboard_mhs');
+//     Route::get('mahasiswa/update_mhs',[MahasiswaController::class, 'update_mhs'])-> name('update_mhs');
+//     Route::get('mahasiswa/irs',[MahasiswaController::class, 'irs'])-> name('irs');
+// });
+
+Route::get('mahasiswa/dashboard_mhs',[MahasiswaController::class, 'index'])-> name('dashboard_mhs');
