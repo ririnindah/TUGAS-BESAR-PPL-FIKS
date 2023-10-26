@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\operator;
 use App\Http\Requests\StoreoperatorRequest;
 use App\Http\Requests\UpdateoperatorRequest;
+use Illuminate\Support\Facades\Auth;
+
 
 class OperatorController extends Controller
 {   
@@ -14,7 +16,9 @@ class OperatorController extends Controller
      */
     public function index()
     {
-        return view('operator/dashboard_opt');
+        $attribute=Auth::guard('opt')->user();
+        // dd($attribute);
+        return view('operator/dashboard_opt',['attribute'=>$attribute]);
     }
     public function generate()
     {

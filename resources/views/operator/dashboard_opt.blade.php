@@ -1,5 +1,6 @@
 @extends('template') @section('content')
-{{ dd(Auth::guard('opt')->user()) }}
+{{-- {{ dd(Auth::guard('opt')->user()) }} --}}
+{{-- {{ dd($attribute) }} --}}
 <div id="wrapper">
   <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -197,14 +198,14 @@
                       <br>
                       <tr>
                         <td class="label">Nama :</td>
-                        <td class="value">Nama</tr>
+                        <td class="value">{{ $attribute->nama }}</tr>
                       <tr>
                         <td class="label">NIP :</td>
-                        <td class="value">0854</td>
+                        <td class="value">{{ $attribute->nip }}</td>
                       </tr>
                       <tr>
                         <td class="label">Email :</td>
-                        <td class="value">XXXXXXXXXX</td>
+                        <td class="value">{{ $attribute->email }}</td>
                       </tr>
                       <tr>
                         <td class="label">Status :</td>
