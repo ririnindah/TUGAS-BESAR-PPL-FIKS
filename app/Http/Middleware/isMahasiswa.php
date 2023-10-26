@@ -17,7 +17,7 @@ class isMahasiswa
     public function handle(Request $request, Closure $next): Response
 
     {
-        dd(Auth::guard('mhs')->user());
+        // dd(Auth::guard('mhs')->user());
         if(!Auth::guard('mhs')->check() || Auth::guard('mhs')->user()->role !== 'mahasiswa'){
             abort(403);
         }
