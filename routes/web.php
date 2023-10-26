@@ -27,27 +27,35 @@ Route::get('/logout',[LoginController::class,'getLogout']);
 
 //opt
 
-// Route::middleware(['isOperator'])->group(function(){
-//     Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
-//     Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('generate');
-// });
+Route::middleware(['isOperator'])->group(function(){
+    Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
+    Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('generate');
+});
 
-Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
-Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('generate');
+// Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
+// Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('generate');
     
 
 
 
 //mhs
 
-// Route::middleware(['isMahasiswa'])->group(function(){
-//     Route::get('mahasiswa/dashboard_mhs',[MahasiswaController::class, 'index'])-> name('dashboard_mhs');
-//     // Route::get('mahasiswa/update_mhs',[MahasiswaController::class, 'update_mhs'])-> name('update_mhs');
-//     // Route::get('mahasiswa/irs',[MahasiswaController::class, 'irs'])-> name('irs');
-// });
+Route::middleware(['isMahasiswa'])->group(function(){
+    Route::get('mahasiswa/dashboard_mhs',[MahasiswaController::class, 'index'])-> name('dashboard_mhs');
+    // Route::get('mahasiswa/update_mhs',[MahasiswaController::class, 'update_mhs'])-> name('update_mhs');
+    // Route::get('mahasiswa/irs',[MahasiswaController::class, 'irs'])-> name('irs');
+});
 
-Route::get('mahasiswa/dashboard_mhs',[MahasiswaController::class, 'index'])-> name('dashboard_mhs');
+// Route::get('mahasiswa/dashboard_mhs',[MahasiswaController::class, 'index'])-> name('dashboard_mhs');
 
-Route::get('dosenwali/dashboard_dsn',[DosenwaliController::class, 'index'])-> name('dashboard_dsn');
+Route::middleware(['isDosenWali'])->group(function(){
+    Route::get('dosenwali/dashboard_dsn',[DosenwaliController::class, 'index'])-> name('dashboard_dsn');
+});
 
-Route::get('departemen/dashboard_dpt',[DepartemenController::class, 'index'])-> name('dashboard_dpt');
+Route::middleware(['isDepartemen'])->group(function(){
+    Route::get('departemen/dashboard_dpt',[DepartemenController::class, 'index'])-> name('dashboard_dpt');
+});
+
+
+
+
