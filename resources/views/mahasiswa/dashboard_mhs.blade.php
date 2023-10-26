@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav">
         <li class="active">
-          <a href="{{ route('dashboard_mhs') }}">
+          <a href="{{ route('mahasiswa.dashboard_mhs') }}">
             <i class="fa fa-fw fa-dashboard"></i> Dashboard </a>
         </li>
         <li>
