@@ -17,23 +17,23 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav">
         <li class="active">
-          <a href="{{ route('mahasiswa.dashboard_mhs') }}">
+          <a href="{{ route('dashboard_mhs') }}">
             <i class="fa fa-fw fa-dashboard"></i> Dashboard </a>
         </li>
         <li>
-          <a href="{{ route('irs') }}">
+          <a href="">
             <i class="fa fa-fw fa-columns"></i> IRS </a>
         </li>
         <li>
-          <a href="{{ route('irs') }}">
+          <a href="">
             <i class="fa fa-fw fa-file-text-o"></i> KHS </a>
         </li>
         <li>
-          <a href="{{ route('irs') }}">
+          <a href="">
             <i class="fa fa-fw fa-tasks"></i> PKL </a>
         </li>
         <li>
-          <a href="{{ route('irs') }}">
+          <a href="">
             <i class="fa fa-fw fa-newspaper-o"></i> Skripsi </a>
         </li>
       </ul>
@@ -65,6 +65,7 @@
                   <br>
                   <img class="imgpr" src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="Profile Image">
                 </div>
+
                 <div class="right-container">
                   <table>
                     <button class="edit-button">
@@ -74,19 +75,19 @@
                     <br>
                     <tr>
                       <td class="label">Name :</td>
-                      <td class="value">Mahasiswa</td>
+                      <td class="value">{{ $attribute->nama }}</td>
                     </tr>
                     <tr>
                       <td class="label">NIM :</td>
-                      <td class="value">0854</td>
+                      <td class="value">{{ $attribute->nim }}</td>
                     </tr>
                     <tr>
                       <td class="label">Email :</td>
-                      <td class="value">XXXXXXXXXX</td>
+                      <td class="value">{{ $attribute->email }}</td>
                     </tr>
                     <tr>
                       <td class="label">Status :</td>
-                      <td class="value"> Aktif</td>
+                      <td class="value"> {{ $attribute->status }}</td>
                     </tr>
                   </table>
                 </div>
@@ -101,7 +102,7 @@
             <i class="fa fa-fw fa-columns fa-3x"></i>
           </div>
         </div>
-        <a href="{{ route('irs') }}">
+        <a href="">
           <div class="panel-footer">
             <span class="pull-left">IRS</span>
             <span class="pull-right">
@@ -117,7 +118,7 @@
             <i class="fa fa-fw fa-file-text-o fa-3x"></i>
           </div>
         </div>
-        <a href="{{ route('irs') }}">
+        <a href="">
           <div class="panel-footer">
             <span class="pull-left">KHS</span>
             <span class="pull-right">
@@ -133,7 +134,7 @@
             <i class="fa fa-fw fa-tasks fa-3x"></i>
           </div>
         </div>
-        <a href="{{ route('irs') }}">
+        <a href="">
           <div class="panel-footer">
             <span class="pull-left">PKL</span>
             <span class="pull-right">
@@ -149,7 +150,7 @@
             <i class="fa fa-fw 	fa-newspaper-o fa-3x"></i>
           </div>
         </div>
-        <a href="{{ route('irs') }}">
+        <a href="">
           <div class="panel-footer">
             <span class="pull-left">Skripsi</span>
             <span class="pull-right">

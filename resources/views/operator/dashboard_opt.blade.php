@@ -191,10 +191,10 @@
                   </div>
                   <div class="right-container">
                     <table>
-                      <button class="edit-button">
+                      {{-- <button class="edit-button">
                         <i class="fa fa-edit">Edit</i>
                         <!-- Ikon pensil dari Font Awesome -->
-                      </button>
+                      </button> --}}
                       <br>
                       <tr>
                         <td class="label">Nama :</td>

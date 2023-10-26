@@ -36,17 +36,17 @@ class LoginController extends Controller
         else if(Auth::guard('mhs')->attempt($credentials)){
 
             $request->session()->regenerate();
-            return redirect()->intended('operator/dashboard_mhs');
+            return redirect()->intended('mahasiswa/dashboard_mhs');
         }
         else if(Auth::guard('dsn')->attempt($credentials)){
 
             $request->session()->regenerate();
-            return redirect()->intended('operator/dashboard_dsn');
+            return redirect()->intended('dosen/dashboard_dsn');
         }
         else if(Auth::guard('dpt')->attempt($credentials)){
 
             $request->session()->regenerate();
-            return redirect()->intended('operator/dashboard_dpt');
+            return redirect()->intended('departemen/dashboard_dpt');
         }
         else{
             return back()->with('loginError', 'Login Failed');

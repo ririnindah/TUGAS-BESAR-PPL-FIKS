@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Middleware\isOperator;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\Attributes\Group;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OperatorController;
-use App\Http\Middleware\isOperator;
-use PHPUnit\Framework\Attributes\Group;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------

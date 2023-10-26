@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\mahasiswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MahasiswaController extends Controller
 {
@@ -12,7 +13,9 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        //
+        $attribute=Auth::guard('mhs')->user();
+        // dd($attribute);
+        return view('mahasiswa/dashboard_mhs',['attribute'=>$attribute]);
     }
 
     /**
