@@ -18,7 +18,7 @@ class isMahasiswa
 
     {
 
-        if(!Auth::guard('mhs')->check() || Auth::guard('mhs')->user()->role !== 'mahasiswa'){
+        if(!auth()->check() || auth()->user()->role !== 'mahasiswa'){
             abort(403);
         }
 

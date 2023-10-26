@@ -54,7 +54,7 @@ return [
         ],
         'dpt' => [
             'driver' => 'session',
-            'provider' => 'departement',
+            'provider' => 'departemen',
         ],
     ],
 
