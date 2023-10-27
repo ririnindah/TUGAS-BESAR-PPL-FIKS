@@ -34,7 +34,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
 </head>
 
 <body>
@@ -53,7 +53,7 @@
                 </button>
                 <a class="navbar-brand" style="display: flex; align-items: center;">
     <img style="margin-left: 10px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
-    
+
 </a>
 
             </div>
@@ -123,6 +123,7 @@
                       <a href="#">Read All New Messages</a>
                     </li>
                   </ul>
+
                 </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -171,9 +172,10 @@
                     </li>
                   </ul>
                 </li>
-              </ul>
+            </ul>
 
-            <div class="collapse navbar-collapse navbar-ex1-collapse ">
+
+              <div class="collapse navbar-collapse navbar-ex1-collapse ">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
                         <a class="nav-link custom-nav-link" href="#" ><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
@@ -200,8 +202,8 @@
 
                 </ul>
             </div>
-            
-            
+
+
         </nav>
 
         <div id="page-wrapper">
@@ -261,7 +263,7 @@
 
         </div>
     </section>
-      
+
         </div>
     </div>
 
@@ -270,13 +272,13 @@
                     <br>
                         <div class="panel panel-red">
                             <div class="panel-heading">
-                                
+
                                     <div>
                                         <i class="fa fa-fw fa-tasks fa-3x">  </i>
                                     </div>
-                                
+
                             </div>
-                            
+
                                 <div class="panel-footer">
                                     <span class="pull-left">Monitoring dan Evaluasi Progress Perkuliahan Mahasiswa</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -284,42 +286,42 @@
 
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-md-2"> 
+                                            <div class="col-md-2">
                                                 <div class="card" style="width: 15rem; height: 4rem;">
                                                     <a href="#" class="btn" role="button" style="width: 15rem; height: 4rem;">Rekap PKL</a>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2"> 
+                                            <div class="col-md-2">
                                                 <div class="card" style="width: 15rem; height: 4rem;">
                                                     <a href="#" class="btn" role="button" style="width: 15rem; height: 4rem;">List PKL</a>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2"> 
+                                            <div class="col-md-2">
                                                 <div class="card" style="width: 15rem; height: 4rem;">
                                                     <a href="#" class="btn" role="button" style="width: 15rem; height: 4rem;">Rekap Skripsi</a>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2"> 
+                                            <div class="col-md-2">
                                                 <div class="card" style="width: 15rem; height: 4rem;">
                                                     <a href="#" class="btn" role="button" style="width: 15rem; height: 4rem;">List Skripsi</a>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>       
-                                    
-                                    
+                                    </div>
+
+
                                     <div class="clearfix"></div>
-                                </div>                                                                                              
+                                </div>
                             </a>
                         </div>
-                    <br><br> 
-                    
+                    <br><br>
+
                 </div>
-               
+
             </div>
-                
+
                 <!-- /.row -->
-               
+
             </div>
             <!-- /.container-fluid -->
 

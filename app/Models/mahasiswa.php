@@ -26,4 +26,8 @@ class mahasiswa extends Model
     protected $casts = [
         'password' => 'hashed',
     ];
+
+    public function dosenwali(){
+        return $this->belongsTo(dosenwali::class);
+    }
 }

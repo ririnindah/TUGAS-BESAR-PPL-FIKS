@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('kabupaten');
             $table->string('alamat');
             $table->string('foto');
+            $table->foreignId('dsn_id');
             $table->rememberToken();
             $table->timestamps();
         });

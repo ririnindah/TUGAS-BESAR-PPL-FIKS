@@ -11,18 +11,21 @@
 
 <body>
 	<div class="container">
-		<div class="img">
-			<img src="https://i.ibb.co/yBG6mSK/Simone-4.png">
-		</div>
-		<div class="login-content">
-
-        @if (session()->has('loginError'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{session('loginError')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                </button>
+        <div class="row">
+                {{-- logo kiri --}}
+            <div class="img">
+                <img src="https://i.ibb.co/yBG6mSK/Simone-4.png">
             </div>
-        @endif
+        </div>
+
+		<div class="login-content">
+            @if (session()->has('loginError'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{session('loginError')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+            @endif
 
             {{-- form --}}
 			<form action= "/" method="post">

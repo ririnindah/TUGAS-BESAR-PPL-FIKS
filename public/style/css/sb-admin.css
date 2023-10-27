@@ -14,11 +14,11 @@ body {
 }
 
 #update{
-   
+
         margin-top: 100px;
         background-color: white;
         font-family: 'Poppins', sans-serif;
-    
+
 }
 
 
@@ -133,7 +133,7 @@ ul.alert-dropdown {
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        
+
     }
 
     .side-nav>li>a {
@@ -240,10 +240,12 @@ ul.alert-dropdown {
   }
 
 .right-container .label {
+    display: flex;
     border: none;
     background-color: gray ;/* Latar belakang yang menarik */
     padding: 4px;
-    text-align: right; /* Tanda ":" sejajar ke kanan */
+    position: center;
+    text-align: center; /* Tanda ":" sejajar ke kanan */
 }
 .right-container .value {
     border: none;
@@ -260,9 +262,9 @@ ul.alert-dropdown {
     top: 0;
     right: 0;
         background-color: #e8424d; /* Warna latar belakang */
-        border: none; 
+        border: none;
         border-radius: 5px; /* Border radius 3 */
-        color: white; 
+        color: white;
 }
 
 

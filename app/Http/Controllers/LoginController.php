@@ -20,9 +20,9 @@ class LoginController extends Controller
     }
     public function authenticate(Request $request)
     {
-        
+
         $credentials = $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required',
             'password' => 'required'
         ]);
 
@@ -31,7 +31,7 @@ class LoginController extends Controller
             // dd(Auth::guard('opt')->user()->id);
             $request->session()->regenerate();
             return redirect()->intended('operator/dashboard_opt');
-            
+
         }
         else if(Auth::guard('mhs')->attempt($credentials)){
 
