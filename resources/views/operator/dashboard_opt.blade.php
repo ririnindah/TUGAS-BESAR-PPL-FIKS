@@ -13,7 +13,9 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" style="display: flex; align-items: center;">
-        <img style="margin-left: 10px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
+        <a href="{{ route('dashboard_opt') }}">
+            <img style="margin-left: -5px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
+        </a>
       </a>
     </div>
     <!-- Top Menu Items -->
@@ -169,12 +171,14 @@
         <!-- Page Heading -->
         <div class="row">
           <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header">
+                <a href="{{ route('dashboard_opt') }}" >Dashboard</a>
+            </h1>
             <ol class="breadcrumb">
-              <li class="active">
-                <i class="fa fa-dashboard"></i> Dashboard
-              </li>
-            </ol>
+                <li class="active">
+                    <a href="{{ route('dashboard_opt') }}" >Dashboard</a>
+                </li>
+              </ol>
           </div>
         </div>
         <!-- /.row -->
@@ -196,20 +200,21 @@
                         <!-- Ikon pensil dari Font Awesome -->
                       </button> --}}
                       <br>
+
                       <tr>
-                        <td class="label">Nama :</td>
-                        <td class="value">{{ $attribute->nama }}</tr>
+                        <td>Nama</td>
+                        <td>&nbsp;:&nbsp;</td>
+                        <td class="value">{{ $attribute->nama }}</td>
+                      </tr>
                       <tr>
-                        <td class="label">NIP :</td>
+                        <td>NIP</td>
+                        <td>&nbsp;: </td>
                         <td class="value">{{ $attribute->nip }}</td>
                       </tr>
                       <tr>
-                        <td class="label">Email :</td>
+                        <td>Email</td>
+                        <td>&nbsp;: </td>
                         <td class="value">{{ $attribute->email }}</td>
-                      </tr>
-                      <tr>
-                        <td class="label">Status :</td>
-                        <td class="value"> Aktif</td>
                       </tr>
                     </table>
                   </div>

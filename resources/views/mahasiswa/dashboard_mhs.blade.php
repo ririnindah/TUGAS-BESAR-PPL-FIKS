@@ -10,7 +10,11 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" style="display: flex; align-items: center;">
-<img style="margin-left: 10px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
+<a href="{{ route('dashboard_mhs') }}">
+    <img style="margin-left: -5px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
+</a>
+{{-- <img style="margin-left: 10px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt=""> --}}
+
 
 </a>
 </div>
@@ -135,8 +139,9 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav">
         <li class="active">
-          <a href="{{ route('dashboard_mhs') }}">
-            <i class="fa fa-fw fa-dashboard"></i> Dashboard </a>
+            <a href="{{ route('dashboard_mhs') }}">
+                <i class="fa fa-fw fa-dashboard"></i> Dashboard
+            </a>
         </li>
         <li>
           <a href="">
@@ -163,10 +168,13 @@
       <!-- Page Heading -->
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header">
+                <a href="{{ route('dashboard_mhs') }}" >Dashboard</a>
+            </h1>
+
           <ol class="breadcrumb">
             <li class="active">
-              <i class="fa fa-dashboard"></i> Dashboard
+                <a href="{{ route('dashboard_mhs') }}" >Dashboard</a>
             </li>
           </ol>
         </div>
@@ -186,13 +194,15 @@
                 </div>
                 <div class="right-container">
                   <table>
-                    <button class="edit-button">
-                      <i class="fa fa-edit">Edit</i>
-                      <!-- Ikon pensil dari Font Awesome -->
-                    </button>
+
+                    {{-- button edit --}}
+                    <a href="{{ route('update_mhs') }}" class="edit-button btn">
+                        <i class="fa fa-edit"> Edit</i>
+                    </a>
+
                     <br>
                     <tr>
-                      <td>Name</td>
+                      <td>Nama</td>
                       <td>&nbsp;:&nbsp;</td>
                       <td class="value">{{ $attribute->nama }}</td>
                     </tr>
@@ -217,7 +227,7 @@
               </div>
           </section>
 
-          
+
         </div>
       </div>
       <br>

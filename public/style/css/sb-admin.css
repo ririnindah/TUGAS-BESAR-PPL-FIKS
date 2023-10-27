@@ -38,6 +38,15 @@ body {
     background-color: #fff;
 }
 
+.page-header a:hover , .active a:hover{
+    text-decoration: none;
+}
+
+.page-header a, .active a{
+    color: inherit;
+    font-size: inherit;
+}
+
 .huge {
     font-size: 50px;
     line-height: normal;
@@ -261,11 +270,15 @@ ul.alert-dropdown {
     position: absolute;
     top: 0;
     right: 0;
-        background-color: #e8424d; /* Warna latar belakang */
-        border: none;
-        border-radius: 5px; /* Border radius 3 */
-        color: white;
+    background-color: #e8424d; /* Warna latar belakang */
+    border: none;
+    border-radius: 5px; /* Border radius 3 */
+    color: white;
 }
 
+.edit-button:hover {
+    background-color: #b9b6b6; /* Warna latar belakang */
+    color: black;
+}
 
 /*login1*/

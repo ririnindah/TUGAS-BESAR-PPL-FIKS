@@ -172,6 +172,8 @@ body {
     left: 75%;
     background: linear-gradient(#0098f0, #0457d3);
 } */
+
+
 .card {
     display: flex;
     flex-direction: row;
@@ -179,8 +181,8 @@ body {
     width: 700px;
     height: 220px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    /* margin: auto; */
-    /* padding-left: 30px; */
+    margin: auto;
+    margin-right: 50px;
 
 }
 .left-container {
@@ -263,6 +265,7 @@ body {
   }
 
   td {
+    font-size: 17px;
   }
 
   td:first-child {

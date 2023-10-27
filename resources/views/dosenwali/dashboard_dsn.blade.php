@@ -34,7 +34,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     <link href="{{asset('style/css/dsb-dsn.css')}}" rel="stylesheet">
 </head>
 
@@ -53,8 +53,10 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" style="display: flex; align-items: center;">
-    <img style="margin-left: 10px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
-    
+        <a href="{{ route('dashboard_mhs') }}">
+            <img style="margin-left: -5px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
+        </a>
+
 </a>
 
             </div>
@@ -211,10 +213,12 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                        <h1 class="page-header">
+                            <a href="{{ route('dashboard_mhs') }}" >Dashboard</a>
+                        </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Dashboard
+                                <a href="{{ route('dashboard_mhs') }}" >Dashboard</a>
                             </li>
                         </ol>
                     </div>
@@ -235,33 +239,33 @@
                 </div>
                 <div class="right-container">
   <table>
-  <button class="edit-button">
-                            <i class="fa fa-edit">Edit</i> <!-- Ikon pensil dari Font Awesome -->
-                        </button>
+    <a href="#" class="edit-button btn">
+        <i class="fa fa-edit"> Edit</i>
+    </a>
     <br>
+
     <tr>
-      <td class="label">Nama   :</td>
-      <td class="value">Dsn</td>
-    </tr>
-    <tr>
-      <td class="label">NIP     :</td>
-      <td class="value">0854</td>
-    </tr>
-    <tr>
-      <td class="label">Email   :</td>
-      <td class="value">XXXXXXXXXX</td>
-    </tr>
-    <tr>
-      <td class="label">Status  :</td>
-      <td class="value"> Aktif</td>
-    </tr>
+        <td>Nama</td>
+        <td>&nbsp;:&nbsp;</td>
+        <td class="value">{{ $attribute->nama }}</td>
+      </tr>
+      <tr>
+        <td>NIP</td>
+        <td>&nbsp;: </td>
+        <td class="value">{{ $attribute->nip }}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>&nbsp;: </td>
+        <td class="value">{{ $attribute->email }}</td>
+      </tr>
   </table>
 </div>
 
 
         </div>
     </section>
-      
+
         </div>
     </div>
 
@@ -270,13 +274,13 @@
                     <br>
                         <div class="panel panel-red">
                             <div class="panel-heading">
-                                
+
                                     <div>
                                         <i class="fa fa-fw fa-tasks fa-3x">  </i>
                                     </div>
-                                
+
                             </div>
-                            
+
                                 <div class="panel-footer">
                                     <span class="pull-left">Verifikasi Progress Studi</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -284,27 +288,27 @@
 
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-md-2"> 
+                                            <div class="col-md-2">
                                                 <div class="card" style="width: 15rem; height: 4rem;">
                                                     <a href="#" class="btn" role="button" style="width: 15rem; height: 4rem;">IRS</a>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2"> 
+                                            <div class="col-md-2">
                                                 <div class="card" style="width: 15rem; height: 4rem;">
                                                     <a href="#" class="btn" role="button" style="width: 15rem; height: 4rem;">KHS</a>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2"> 
+                                            <div class="col-md-2">
                                                 <div class="card" style="width: 15rem; height: 4rem;">
                                                     <a href="#" class="btn" role="button" style="width: 15rem; height: 4rem;">PKL</a>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>       
-                                    
-                                    
+                                    </div>
+
+
                                     <div class="clearfix"></div>
-                                </div>                                                                                              
+                                </div>
                             </a>
                         </div>
                         <div class="panel panel-red">
@@ -313,7 +317,7 @@
                                         <i class="fa fa-fw fa-columns fa-3x">  </i>
                                     </div>
                             </div>
-        
+
                                 <div class="panel-footer">
                                     <span class="pull-left">Pencarian Program Studi</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -321,14 +325,14 @@
                                 </div>
                             </a>
                         </div>
-                    <br><br> 
-                    
+                    <br><br>
+
                 </div>
-               
+
             </div>
-                
+
                 <!-- /.row -->
-               
+
             </div>
             <!-- /.container-fluid -->
 
