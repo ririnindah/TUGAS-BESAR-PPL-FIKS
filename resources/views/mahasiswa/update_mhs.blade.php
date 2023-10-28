@@ -1,7 +1,7 @@
 @extends('template')
 @section('content')
 <body id="update">
-    
+
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -13,120 +13,235 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" style="display: flex; align-items: center;">
-                <img style="margin-left: 10px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
+                <a href="{{ route('dashboard_mhs') }}">
+                    <img style="margin-left: -5px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
+                </a>
             </a>
         </div>
+
+        {{-- navbar bagian kanan --}}
+                {{-- logout --}}
+        <ul class="nav navbar-right top-nav">
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-envelope"></i>
+                <b class="caret"></b>
+            </a>
+                <ul class="dropdown-menu message-dropdown">
+                    <li class="message-preview">
+                    <a href="#">
+                        <div class="media">
+                        <span class="pull-left">
+                            <img class="media-object" src="http://placehold.it/50x50" alt="">
+                        </span>
+                        <div class="media-body">
+                            <h5 class="media-heading">
+                            <strong>Mahasiswa</strong>
+                            </h5>
+                            <p class="small text-muted">
+                            <i class="fa fa-clock-o"></i> Yesterday at 4:32 PM
+                            </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                        </div>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="message-preview">
+                    <a href="#">
+                        <div class="media">
+                        <span class="pull-left">
+                            <img class="media-object" src="http://placehold.it/50x50" alt="">
+                        </span>
+                        <div class="media-body">
+                            <h5 class="media-heading">
+                            <strong>Deepartemen</strong>
+                            </h5>
+                            <p class="small text-muted">
+                            <i class="fa fa-clock-o"></i> Yesterday at 4:32 PM
+                            </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                        </div>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="message-preview">
+                    <a href="#">
+                        <div class="media">
+                        <span class="pull-left">
+                            <img class="media-object" src="http://placehold.it/50x50" alt="">
+                        </span>
+                        <div class="media-body">
+                            <h5 class="media-heading">
+                            <strong>Mahasiswa</strong>
+                            </h5>
+                            <p class="small text-muted">
+                            <i class="fa fa-clock-o"></i> Yesterday at 4:32 PM
+                            </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                        </div>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="message-footer">
+                    <a href="#">Read All New Messages</a>
+                    </li>
+                </ul>
+
+                </li>
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-bell"></i>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu alert-dropdown">
+                    <li>
+                    <a href="#">Alert Name <span class="label label-default">Alert Badge</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#">Alert Name <span class="label label-primary">Alert Badge</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#">Alert Name <span class="label label-success">Alert Badge</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#">Alert Name <span class="label label-info">Alert Badge</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#">Alert Name <span class="label label-warning">Alert Badge</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#">Alert Name <span class="label label-danger">Alert Badge</span>
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                    <a href="#">View All</a>
+                    </li>
+                </ul>
+                </li>
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-user"></i> Mahasiswa <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                    <a href="/logout">
+                        <i class="fa fa-fw fa-power-off"></i> Log Out </a>
+                    </li>
+                </ul>
+                </li>
+            </ul>
         <!-- .navbar-collapse -->
     </nav>
 
-    <div style="margin-left: 20px; margin-right:20px;">
-  <div class="row">
-    <div class="col-10">
+
+    {{-- konten --}}
     <div class="container">
-        <div>
-            <div class="upload">
-                <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="" width="200" height="200" class="rounded-circle">
-                <div class = "round">
-                <input type="file" name="gambar" id ="gambar" accept = ".jpg, .jpeg, .png">
-                </div>
+        {{-- header --}}
+        <div class="col-lg-12">
+            <div class="header pt-0">
+                <h1 class="page-header mt-0">
+                    <a href="{{ route('update_mhs') }}">Update Data Diri</a>
+                </h1>
             </div>
-            </div>
-            <br>
-          <!-- Konten card pertama di sini -->
-       
-      </div>
-    </div>
-    <div class="col-9">
-      <div class="container">
-        <div class="card-body">
-        <form method="post">
-            <div class="form-group row">
-                <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name" name="name">
-                </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <label for="nim" class="col-sm-2 col-form-label">NIM</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nim">
-                </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <label for="email" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="email">
-                </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <label for="status" class="col-sm-2 col-form-label">Status</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="status">
-                </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <label for="fakultas" class="col-sm-2 col-form-label">Fakultas</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="fakultas">
-                </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <label for="departemen" class="col-sm-2 col-form-label">Departemen</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="departemen">
-                </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <label for="angkatan" class="col-sm-2 col-form-label">Angkatan</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="angkatan">
-                </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <label for="jalur_masuk" class="col-sm-2 col-form-label">Jalur Masuk</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="jalur_masuk">
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <div class="form-group row">
-                <label for="provinsi" class="col-sm-2 col-form-label">Provinsi</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="provinsi">
-                </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <label for="kab/kota" class="col-sm-2 col-form-label">Kab/Kota</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="kab/kota">
-                </div>
-            </div>
-            <br>
-            <div class="form-group row">
-                <label for="alamat"class="col-sm-2 col-form-label">Alamat</label>
-                <div class="col-sm-10">
-                <textarea name="alamat" id="alamat" rows="3" class="form-control"></textarea>
-                </div>
-            </div>
-            <br>
-            <div class="text-right">
-            <button type="submit" name="submit" value="submit" class="btn btn-primary float-left">Simpan</button>
-            </div> 
-        </form>
+            {{-- path --}}
+            <ol class="breadcrumb">
+                <li class="active">
+                    <a href="{{ route('dashboard_mhs') }}" >Dashboard / </a>
+                    <a href="{{ route('update_mhs') }}" style="color: dodgerblue"
+                        >Update Data Diri
+                    </a>
+                </li>
+            </ol>
         </div>
-      </div>
     </div>
-  </div>
+
+    <div class="container">
+            <div class="row" style="margin-left: 5px; margin-right: 5px;">
+                <form action=""></form>
+                {{-- images --}}
+                <div class="col-sm-2 images">
+                    <div class="upload">
+                        <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="" width="160" height="160" class="rounded-circle">
+                        <div class = "round">
+                        <input type="file" name="gambar" id ="gambar" accept = ".jpg, .jpeg, .png">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="disable col-sm-5 ">
+                    <div class="form-floating m-3">
+                        <label class="col-sm-4 " for="nim">NIM</label>
+                        <input class="col-sm-8" type="text" class="form-control" placeholder="{{ $attribute->nim }}" id="nim" disabled>
+                    </div>
+
+                    <div class="form-floating mt-3">
+                        <label class="col-sm-4 " for="angkatan">Angkatan</label>
+                        <input class="col-sm-8" type="text" class="form-control" id="angkatan" placeholder="{{ $attribute->angkatan }}" disabled>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label class="col-sm-4" for="nama">Nama Lengkap</label>
+                        <input class="col-sm-8" type="text" class="form-control" id="nama">
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label class="col-sm-4 " for="email">Email</label>
+                        <input class="col-sm-8" type="email" class="form-control" id="email">
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label class="col-sm-4 " for="provinsi">Provinsi</label>
+                        <input class="col-sm-8" type="text" class="form-control" id="provinsi">
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label class="col-sm-4 " for="kota">Kota</label>
+                        <input class="col-sm-8" type="text" class="form-control" id="kota">
+                    </div>
+                </div>
+
+                <div class="able col-sm-5">
+                    <div class="form-floating mb-2">
+                        <label class="col-sm-4 " for="status">Status</label>
+                        <input class="col-sm-8" type="status" class="form-control" id="status">
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label class="col-sm-4 " for="fakultas">Fakultas</label>
+                        <input class="col-sm-8" type="fakultas" class="form-control" id="Fakultas">
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label class="col-sm-4 " for="departemen">Departemen</label>
+                        <input class="col-sm-8" type="departemen" class="form-control" id="departemen">
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label class="col-sm-4 " for="jalur masuk">Jalur Masuk</label>
+                        <input class="col-sm-8"  class="form-control" id="jalur masuk">
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label class="col-sm-4 " for="alamat">Alamat</label>
+                        <textarea class="col-sm-8" name="alamat" class="form-control" id="alamat" cols="30" rows="5"></textarea>
+                    </div>
+                </div>
+                {{-- </div> --}}
+            </div>
+
+            <div class="mt-3">
+                <button type="submit" name="submit" value="submit" class="btn btn-primary btn-block" type="button">Simpan</button>
+            </div>
+    </div>
+
+
 </body>
 @endsection
 

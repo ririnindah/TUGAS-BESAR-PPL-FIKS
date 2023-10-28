@@ -900,7 +900,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  
+
   font-size: 14px;
   line-height: 1.42857143;
   color: gray;
@@ -1215,7 +1215,7 @@ a.bg-danger:hover {
   background-color: #e4b9b9;
 }
 .page-header {
-  
+
   padding-bottom: 9px;
   /*margin: 40px 0 20px;*/
   border-bottom: 1px solid #eee;
@@ -6118,6 +6118,9 @@ button.close {
 .hidden {
   display: none !important;
   visibility: hidden !important;
+
+  /*  */
+
 }
 .affix {
   position: fixed;
@@ -6334,4 +6337,3 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 /*Nadiyya Nakal*/
-

@@ -18,12 +18,12 @@ class MahasiswaController extends Controller
         return view('mahasiswa/dashboard_mhs',['attribute'=>$attribute]);
     }
 
-    public function update_mhs()
-    {
-        $attribute=Auth::guard('mhs')->user();
-        // dd($attribute);
-        return view('mahasiswa/update_mhs', ['attribute'=>$attribute]);
-    }
+    // public function update_mhs()
+    // {
+    //     $attribute=Auth::guard('mhs')->user();
+    //     // dd($attribute);
+    //     return view('mahasiswa/update_mhs', ['attribute'=>$attribute]);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -54,7 +54,9 @@ class MahasiswaController extends Controller
      */
     public function edit(mahasiswa $mahasiswa)
     {
-        //
+        $attribute=Auth::guard('mhs')->user();
+        // dd($attribute);
+        return view('mahasiswa/update_mhs', ['attribute'=>$attribute]);
     }
 
     /**
