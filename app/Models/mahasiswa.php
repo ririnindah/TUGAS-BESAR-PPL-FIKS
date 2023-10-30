@@ -15,6 +15,9 @@ class mahasiswa extends Model
     protected $guarded = [
         'id'
     ];
+
+    // protected $fillable = ['foto', 'nama', 'email', 'provinsi', 'kabupaten', 'status', 'fakultas', 'departemen', 'jalur_masuk', 'alamat'];
+
     protected $table = 'mahasiswas';
 
     protected $hidden = [

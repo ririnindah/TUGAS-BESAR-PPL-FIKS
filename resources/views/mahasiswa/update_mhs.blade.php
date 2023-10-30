@@ -126,7 +126,7 @@
                 </li>
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-user"></i> Mahasiswa <b class="caret"></b>
+                    <i class="fa fa-user"></i> {{ $attribute->nama }} <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
@@ -145,7 +145,7 @@
         {{-- header --}}
         <div class="col-lg-12">
             <div class="header pt-0">
-                <h1 class="page-header mt-0">
+                <h1 class="page-header update mt-0">
                     <a href="{{ route('update_mhs') }}">Update Data Diri</a>
                 </h1>
             </div>
@@ -163,81 +163,114 @@
 
     <div class="container">
             <div class="row" style="margin-left: 5px; margin-right: 5px;">
-                <form action=""></form>
-                {{-- images --}}
-                <div class="col-sm-2 images">
-                    <div class="upload">
-                        <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="" width="160" height="160" class="rounded-circle">
-                        <div class = "round">
-                        <input type="file" name="gambar" id ="gambar" accept = ".jpg, .jpeg, .png">
+                <form action="{{ route('update_mhs') }}" method="POST" enctype="multipart/form-data">
+                    @method('PUT')
+                    @csrf
+                    {{-- images --}}
+                    <div class="col-sm-4 images">
+                        <div class="upload">
+                            <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="" width="220" height="220" class="rounded-circle">
+
+                            <div class = "round">
+                                <input class=" @error('foto') is-invalid @enderror" type="file" name="foto" id ="foto" accept = ".jpg, .jpeg, .png" onchange="previewImage()">
+                                @error('foto')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+
+                    <div class="disable col-sm-4 ">
+                        <div class="form-floating m-3">
+                            <label class="col-sm-4 " for="nim">NIM</label>
+                            <input class="col-sm-8" name="mim" type="text" class="form-control" placeholder="{{ $attribute->nim }}" id="nim" disabled>
+                        </div>
+
+                        <div class="form-floating mt-3">
+                            <label class="col-sm-4 " for="angkatan">Angkatan</label>
+                            <input class="col-sm-8" name="angkatan" type="text" class="form-control" id="angkatan" placeholder="{{ $attribute->angkatan }}" disabled>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="col-sm-4" for="nama">Nama</label>
+                            <input class="col-sm-8 @error('nama') is-invalid @enderror" name="nama" type="text" class="form-control" id="nama" value="{{ old('nama') }}">
+                            @error('nama')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="col-sm-4 " for="email">Email</label>
+                            <input class="col-sm-8 @error('email') is-invalid @enderror" name="email" type="email" class="form-control" id="email" value="{{ old('email') }}">
+                            @error('email')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="col-sm-4 " for="provinsi">Provinsi</label>
+                            <input class="col-sm-8 @error('provinsi') is-invalid @enderror" name="provinsi" type="text" class="form-control" id="provinsi" value="{{ old('provinsi') }}">
+                            @error('provinsi')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="col-sm-4 " for="kabupaten">Kabupaten</label>
+                            <input class="col-sm-8 @error('kabupaten') is-invalid @enderror" name="kabupaten" type="text" class="form-control" id="kabupaten" value="{{ old('kabupaten') }}">
+                            @error('kabupaten')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
-                    <br>
-                </div>
 
-                <div class="disable col-sm-5 ">
-                    <div class="form-floating m-3">
-                        <label class="col-sm-4 " for="nim">NIM</label>
-                        <input class="col-sm-8" type="text" class="form-control" placeholder="{{ $attribute->nim }}" id="nim" disabled>
+                    <div class="able col-sm-4">
+                        <div class="form-floating mb-2">
+                            <label class="col-sm-4 " for="status">Status</label>
+                            <input class="col-sm-8 @error('status') is-invalid @enderror" name="status" type="status" class="form-control" id="status" value="{{ old('status') }}">
+                            @error('status')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="col-sm-4 " for="fakultas">Fakultas</label>
+                            <input class="col-sm-8 @error('fakultas') is-invalid @enderror" name="fakultas" type="fakultas" class="form-control" id="Fakultas" value="{{ old('fakultas') }}">
+                            @error('fakultas')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="col-sm-4 " for="departemen">Departemen</label>
+                            <input class="col-sm-8 @error('departemen') is-invalid @enderror" name="departemen" type="departemen" class="form-control" id="departemen" value="{{ old('departemen') }}">
+                            @error('departemen')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="col-sm-4 " for="jalur_masuk">Jalur Masuk</label>
+                            <input class="col-sm-8 @error('jalur_masuk') is-invalid @enderror" name="jalur_masuk"  class="form-control" id="jalur_masuk" value="{{ old('jalur_masuk') }}">
+                            @error('jalur_masuk')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="col-sm-4 " for="alamat">Alamat</label>
+                            <textarea class="col-sm-8 @error('alamat') is-invalid @enderror" name="alamat" name="alamat" class="form-control" id="alamat" cols="30" rows="5" value="{{ old('alamat') }}"></textarea>
+                            @error('alamat')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
                     </div>
 
-                    <div class="form-floating mt-3">
-                        <label class="col-sm-4 " for="angkatan">Angkatan</label>
-                        <input class="col-sm-8" type="text" class="form-control" id="angkatan" placeholder="{{ $attribute->angkatan }}" disabled>
+                    <div class="submit col-sm-8 mt-3">
+                        <button type="submit" name="submit" value="submit" class="btn btn-primary btn-block" type="button">Simpan</button>
                     </div>
-
-                    <div class="form-floating mb-3">
-                        <label class="col-sm-4" for="nama">Nama Lengkap</label>
-                        <input class="col-sm-8" type="text" class="form-control" id="nama">
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <label class="col-sm-4 " for="email">Email</label>
-                        <input class="col-sm-8" type="email" class="form-control" id="email">
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <label class="col-sm-4 " for="provinsi">Provinsi</label>
-                        <input class="col-sm-8" type="text" class="form-control" id="provinsi">
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <label class="col-sm-4 " for="kota">Kota</label>
-                        <input class="col-sm-8" type="text" class="form-control" id="kota">
-                    </div>
-                </div>
-
-                <div class="able col-sm-5">
-                    <div class="form-floating mb-2">
-                        <label class="col-sm-4 " for="status">Status</label>
-                        <input class="col-sm-8" type="status" class="form-control" id="status">
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <label class="col-sm-4 " for="fakultas">Fakultas</label>
-                        <input class="col-sm-8" type="fakultas" class="form-control" id="Fakultas">
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <label class="col-sm-4 " for="departemen">Departemen</label>
-                        <input class="col-sm-8" type="departemen" class="form-control" id="departemen">
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <label class="col-sm-4 " for="jalur masuk">Jalur Masuk</label>
-                        <input class="col-sm-8"  class="form-control" id="jalur masuk">
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <label class="col-sm-4 " for="alamat">Alamat</label>
-                        <textarea class="col-sm-8" name="alamat" class="form-control" id="alamat" cols="30" rows="5"></textarea>
-                    </div>
-                </div>
-                {{-- </div> --}}
-            </div>
-
-            <div class="mt-3">
-                <button type="submit" name="submit" value="submit" class="btn btn-primary btn-block" type="button">Simpan</button>
+                </form>
             </div>
     </div>
 

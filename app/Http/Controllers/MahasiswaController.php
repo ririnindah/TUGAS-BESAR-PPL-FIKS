@@ -56,16 +56,43 @@ class MahasiswaController extends Controller
     {
         $attribute=Auth::guard('mhs')->user();
         // dd($attribute);
-        return view('mahasiswa/update_mhs', ['attribute'=>$attribute]);
+        return view('mahasiswa/update_mhs', [
+            'mahsiswa' => $mahasiswa,
+            'attribute'=>$attribute
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, mahasiswa $mahasiswa)
-    {
-        //
+{
+    $validateData = $request->validate([
+        'foto' => 'image|max:1024', // Hilangkan 'file', karena 'image' sudah termasuk 'file'
+        'nama' => 'required',
+        'email' => 'required',
+        'provinsi' => 'required',
+        'kabupaten' => 'required',
+        'status' => 'required',
+        'fakultas' => 'required',
+        'departemen' => 'required',
+        'jalur_masuk' => 'required',
+        'alamat' => 'required'
+    ]);
+
+    // dd($data);
+
+    if ($request->hasFile('foto')) {
+        $validateData['foto'] = $request->file('foto')->store('updateImages');
     }
+
+    $attribute=Auth::guard('mhs')->user();
+    mahasiswa::where('id', $attribute->id)->update($validateData);
+
+    return redirect()->route('dashboard_mhs');
+}
+
+
 
     /**
      * Remove the specified resource from storage.

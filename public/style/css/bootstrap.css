@@ -35,6 +35,32 @@ video {
   display: inline-block;
   vertical-align: baseline;
 }
+
+
+/* tambahan */
+.container .form-floating input {
+    margin-bottom: 16px;
+ }
+
+.update{
+    margin-top: -30px;
+}
+
+.submit {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.upload {
+    margin-left: 60px;
+}
+
+.invalid-feedback {
+    color: red;
+    margin-left: 115px;
+    /* margin-top: -25px; */
+}
+
 audio:not([controls]) {
   display: none;
   height: 0;
