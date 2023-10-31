@@ -10,14 +10,12 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" style="display: flex; align-items: center;">
-<a href="{{ route('dashboard_mhs') }}">
-    <img style="margin-left: -5px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
-</a>
-{{-- <img style="margin-left: 10px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt=""> --}}
+          <a href="{{ route('dashboard_mhs') }}">
+              <img style="margin-left: -5px;" src="https://i.ibb.co/yBG6mSK/Simone-4.png" width="50" height="50" alt="">
+          </a>
+        </a>
+    </div>
 
-
-</a>
-</div>
     {{-- logout --}}
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
@@ -124,7 +122,7 @@
             </li>
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-user"></i> Mahasiswa <b class="caret"></b>
+                <i class="fa fa-user"></i> {{ $attribute -> nama }} <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
                 <li>
@@ -162,9 +160,9 @@
       </ul>
     </div>
     <!-- /.navbar-collapse -->
-  </nav>
+</nav>
 
-  
+
   <div id="page-wrapper">
     <div class="container-fluid">
       <!-- Page Heading -->
@@ -189,14 +187,24 @@
             {{-- container detail --}}
             <div class="card1">
               <div class="card ">
-                <div class="left-container">
-                  <br>
-                  <br>
-                  <img class="imgpr" src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="Profile Image">
-                </div>
+
+                {{-- PROFILE PICTURE --}}
+                @if ($attribute->foto != null)
+                    {{-- jika melakukan update foto --}}
+                    <div class="left-container  text-center" style="max-height: 350px; overflow:hidden;">
+                        <br><br>
+                        <img src="{{ asset('storage/' . $attribute->foto) }}" class=" imgpr rounded" alt="{{ $attribute->nama }}">
+                    </div>
+                @else
+                    {{-- jika tdk upadate foto --}}
+                    <div class="left-container">
+                        <br><br>
+                        <img class="imgpr" src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="{{ $attribute->nama }}">
+                    </div>
+                @endif
+
                 <div class="right-container">
                   <table>
-
                     {{-- button edit --}}
                     <a href="{{ route('update_mhs') }}" class="edit-button btn">
                         <i class="fa fa-edit"> Edit</i>
@@ -233,13 +241,15 @@
         </div>
       </div>
       <br>
+
+
       <div class="panel panel-red">
         <div class="panel-heading">
           <div>
             <i class="fa fa-fw fa-columns fa-3x"></i>
           </div>
         </div>
-        <a href="">
+        <a href="{{ route('irs') }}">
           <div class="panel-footer">
             <span class="pull-left">IRS</span>
             <span class="pull-right">

@@ -18,6 +18,13 @@ class MahasiswaController extends Controller
         return view('mahasiswa/dashboard_mhs',['attribute'=>$attribute]);
     }
 
+    public function irs()
+    {
+        $attribute=Auth::guard('mhs')->user();
+        // dd($attribute);
+        return view('mahasiswa/irs_mhs',['attribute'=>$attribute]);
+    }
+
     // public function update_mhs()
     // {
     //     $attribute=Auth::guard('mhs')->user();
