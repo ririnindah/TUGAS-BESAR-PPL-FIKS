@@ -47,16 +47,16 @@ class OperatorController extends Controller
         // return $request->file('file')->store('ImportData');
 
         $validateData = $request->validate([
-            'file' => 'required|mimes:csv|max:2048',
+            'file' => 'required|max:2048',
         ]);
 
-        ddd($validateData);
+        // ddd($validateData);
 
         if ($request->hasFile('file')) {
             $validateData['file'] = $request->file('file')->store('ImportDataMhs');
         }
 
-        $attribute=Auth::guard('opt')->user();
+        // $attribute=Auth::guard('opt')->user();
         return redirect()->route('generate');
     }
 
