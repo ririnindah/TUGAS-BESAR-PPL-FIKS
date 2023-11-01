@@ -13,8 +13,8 @@ use Illuminate\Http\Request;
 
 
 class OperatorController extends Controller
-{   
-    
+{
+
     /**
      * Display a listing of the resource.
      */
@@ -40,9 +40,24 @@ class OperatorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store()
+
+    public function store(Request $request)
     {
-        //
+        // ddd($request);
+        // return $request->file('file')->store('ImportData');
+
+        $validateData = $request->validate([
+            'file' => 'required|mimes:csv|max:2048',
+        ]);
+
+        ddd($validateData);
+
+        if ($request->hasFile('file')) {
+            $validateData['file'] = $request->file('file')->store('ImportDataMhs');
+        }
+
+        $attribute=Auth::guard('opt')->user();
+        return redirect()->route('generate');
     }
 
     /**
