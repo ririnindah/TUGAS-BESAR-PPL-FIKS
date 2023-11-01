@@ -53,7 +53,13 @@ class OperatorController extends Controller
         // ddd($validateData);
 
         if ($request->hasFile('file')) {
-            $validateData['file'] = $request->file('file')->store('ImportDataMhs');
+            $file = $request->file('file');
+            $fileExtension = $file->getClientOriginalExtension();
+            $fileName = 'data' . '.' . $fileExtension;
+            $validateData['file'] = $file->storeAs('ImportDataMhs', $fileName);
+
+            // $validateData['file'] = $request->file('file')->store('ImportDataMhs');
+
         }
 
         // $attribute=Auth::guard('opt')->user();

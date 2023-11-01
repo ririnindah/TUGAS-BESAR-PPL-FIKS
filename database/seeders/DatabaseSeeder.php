@@ -33,15 +33,25 @@ class DatabaseSeeder extends Seeder
         DB::disableQueryLog();
 
         LazyCollection::make(function(){
-            $handle = fopen(public_path('storage/ImportData/data.csv'), 'r');
+            $handle = fopen(public_path('storage/ImportDataMhs/7FnUE9YCbsf5WVJLElhqHoyepGHPt4rYbDCwBAOr.txt'), 'r');
             while(($line = fgetcsv($handle, 4096)) !== false){
                 $dataString = implode('; ', $line);
                 $row =  explode(';', $dataString);
                 yield $row;
             }
 
+            // $fp = fopen(public_path('storage/ImportDataMhs/7FnUE9YCbsf5WVJLElhqHoyepGHPt4rYbDCwBAOr.txt'), 'r');
+            // while (($line = fgets($fp, 4096)) !== false) {
+            //     list($email, $password, $role, $nim, $nama, $status, $departemen, $fakultas, $angkatan, $jalur_masuk, $provinsi, $kabupaten, $alamat, $foto, $dsn_id) = explode("\t", trim($line));
+            //     $mhs[] = [$email, $password, $role, $nim, $nama, $status, $departemen, $fakultas, $angkatan, $jalur_masuk, $provinsi, $kabupaten, $alamat, $foto, $dsn_id];
+            // }
+
+            // dd($mhs);
+
             fclose($handle);
+            // fclose($fp);
         })
+
         ->skip(1)
         ->chunk(1000)
         ->each(function(LazyCollection $chunk){
