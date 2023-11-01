@@ -30,6 +30,7 @@ Route::get('/logout',[LoginController::class,'getLogout'])->middleware('guest');
 Route::middleware(['isOperator'])->group(function(){
     Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
     Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('generate');
+    Route::get('operator/generate/import',[OperatorController::class, 'importCSV'])-> name('import');
 });
 
 // Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
