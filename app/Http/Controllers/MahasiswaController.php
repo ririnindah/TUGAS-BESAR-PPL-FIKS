@@ -22,8 +22,8 @@ class MahasiswaController extends Controller
     {
         $attribute=Auth::guard('mhs')->user();
         // dd($attribute);
-        // return view('mahasiswa/irs_mhs',['attribute'=>$attribute]);
-        
+        return view('mahasiswa/irs_mhs',['attribute'=>$attribute]);
+
     }
 
     // public function update_mhs()

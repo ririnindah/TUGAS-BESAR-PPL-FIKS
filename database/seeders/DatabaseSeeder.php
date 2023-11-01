@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 // use Illuminate\Database\Seeder;
 use Illuminate\Support\LazyCollection;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -58,7 +59,7 @@ class DatabaseSeeder extends Seeder
             $records = $chunk->map(function($row){
                 return [
                     'email'=>$row[1],
-                    'password'=>$row[2],
+                    'password'=>Hash::make($row[2]),
                     'role'=>$row[3],
                     'nim'=>$row[4],
                     'nama'=>$row[5],
