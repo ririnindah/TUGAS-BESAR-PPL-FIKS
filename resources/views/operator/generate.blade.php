@@ -65,7 +65,7 @@
             <label class="label">
                 <div class="browse-files">
                     <input type="file" name="file" id ="file" accept = ".csv" onchange="previewImage()">
-                {{-- <span class="browse-files-text browse"> select file from device</span> --}}
+                    <span class="browse-files-text browse"> select file from device</span>
                 </div>
             </label>
 
