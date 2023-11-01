@@ -26,6 +26,14 @@ class MahasiswaController extends Controller
 
     }
 
+    public function khs()
+    {
+        $attribute=Auth::guard('mhs')->user();
+        // dd($attribute);
+        return view('mahasiswa/khs_mhs',['attribute'=>$attribute]);
+
+    }
+
     // public function update_mhs()
     // {
     //     $attribute=Auth::guard('mhs')->user();

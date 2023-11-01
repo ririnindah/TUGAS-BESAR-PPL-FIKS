@@ -31,22 +31,13 @@ Route::middleware(['isOperator'])->group(function(){
     Route::get('operator/dashboard_opt',[OperatorController::class, 'index'])-> name('dashboard_opt');
     Route::get('operator/generate',[OperatorController::class, 'generate'])-> name('generate');
 
-    // Route::post('operator/generate', [OperatorController::class, 'store'])->name('upload');
-    // // import
-    // Route::post('operator/generate/import', function(){
-    //     Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
-    //     return redirect()->route('generate');
-    // })->name('import');
+    Route::post('operator/generate', [OperatorController::class, 'store'])->name('upload');
+    // import
+    Route::post('operator/generate/import', function(){
+        Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
+        return redirect()->route('generate');
+    })->name('import');
 });
-
-
-// OPERATOR LEPAS
-Route::post('operator/generate', [OperatorController::class, 'store'])->name('upload');
-Route::post('operator/generate/import', function(){
-    Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
-    return redirect()->route('generate');
-})->name('import');
-
 
 //mhs
 Route::middleware(['isMahasiswa'])->group(function(){
@@ -54,6 +45,7 @@ Route::middleware(['isMahasiswa'])->group(function(){
     Route::get('mahasiswa/update_mhs',[MahasiswaController::class, 'edit'])-> name('update_mhs');
     Route::put('mahasiswa/update_mhs',[MahasiswaController::class, 'update'])-> name('update_mhs');
     Route::get('mahasiswa/irs',[MahasiswaController::class, 'irs'])-> name('irs');
+    Route::get('mahasiswa/khs',[MahasiswaController::class, 'khs'])-> name('khs');
 });
 
 

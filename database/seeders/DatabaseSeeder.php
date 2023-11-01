@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     {
 
         \App\Models\operator::factory(20)->create();
-        \App\Models\mahasiswa::factory(20)->create();
+        // \App\Models\mahasiswa::factory(20)->create();
         \App\Models\dosenwali::factory(20)->create();
         \App\Models\departemen::factory(20)->create();
         \App\Models\semester::factory(10)->create();
@@ -26,11 +26,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Skripsi::factory(10)->create();
         \App\Models\Pkl::factory(10)->create();
         \App\Models\Khs::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        
         DB::disableQueryLog();
 
         LazyCollection::make(function(){
@@ -41,16 +37,7 @@ class DatabaseSeeder extends Seeder
                 yield $row;
             }
 
-            // $fp = fopen(public_path('storage/ImportDataMhs/7FnUE9YCbsf5WVJLElhqHoyepGHPt4rYbDCwBAOr.txt'), 'r');
-            // while (($line = fgets($fp, 4096)) !== false) {
-            //     list($email, $password, $role, $nim, $nama, $status, $departemen, $fakultas, $angkatan, $jalur_masuk, $provinsi, $kabupaten, $alamat, $foto, $dsn_id) = explode("\t", trim($line));
-            //     $mhs[] = [$email, $password, $role, $nim, $nama, $status, $departemen, $fakultas, $angkatan, $jalur_masuk, $provinsi, $kabupaten, $alamat, $foto, $dsn_id];
-            // }
-
-            // dd($mhs);
-
             fclose($handle);
-            // fclose($fp);
         })
 
         ->skip(1)

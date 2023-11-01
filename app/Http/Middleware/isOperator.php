@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
 class isOperator
@@ -15,9 +14,8 @@ class isOperator
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        // dd(Auth::guard('dpt')->user()->nama);
         if (!Auth::guard('opt')->check() || Auth::guard('opt')->user()->role !== 'operator') {
             abort(403);
         }

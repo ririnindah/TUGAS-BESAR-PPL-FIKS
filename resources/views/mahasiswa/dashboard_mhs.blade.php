@@ -265,7 +265,7 @@
             <i class="fa fa-fw fa-file-text-o fa-3x"></i>
           </div>
         </div>
-        <a href="">
+        <a href="{{ route('khs') }}">
           <div class="panel-footer">
             <span class="pull-left">KHS</span>
             <span class="pull-right">
