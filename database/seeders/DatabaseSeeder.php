@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         DB::disableQueryLog();
 
         LazyCollection::make(function(){
-            $handle = fopen(public_path('storage/ImportDataMhs/7FnUE9YCbsf5WVJLElhqHoyepGHPt4rYbDCwBAOr.txt'), 'r');
+            $handle = fopen(public_path('storage/ImportDataMhs/data.csv'), 'r');
             while(($line = fgetcsv($handle, 4096)) !== false){
                 $dataString = implode('; ', $line);
                 $row =  explode(';', $dataString);

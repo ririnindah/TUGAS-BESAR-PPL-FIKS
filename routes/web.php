@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\Group;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\MahasiswaController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,11 @@ Route::middleware(['isOperator'])->group(function(){
 });
 
 Route::post('operator/generate', [OperatorController::class, 'store'])->name('upload');
+// import
+Route::post('operator/generate/import', function(){
+    Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
+    return redirect()->route('generate');
+})->name('import');
 
 //mhs
 

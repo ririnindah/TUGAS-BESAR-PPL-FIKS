@@ -72,12 +72,18 @@
             {{-- SUBMIT FILE --}}
             <button type="submit" name="submit" value="submit" class="btn btn-primary btn-block" type="button">Submit</button>
             </div>
+
+            <br>
+            <br>
         </form>
 
-        {{-- GENERATE --}}
-        <a href="{{ route('dashboard_opt') }}">
-            <button type="button" class="upload-button"> Generate </button>
-        </a>
+        <form action="{{ route('import') }}" method="POST">
+            @csrf
+            {{-- GENERATE --}}
+            <button type="submit" name="submit" value="submit" class="btn btn-primary btn-block" type="button">GENERATE</button>
+        </form>
+
+
       <br>
       <br>
       <br>
