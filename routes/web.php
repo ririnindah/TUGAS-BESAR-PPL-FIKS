@@ -34,7 +34,7 @@ Route::middleware(['isOperator'])->group(function(){
     Route::post('operator/generate', [OperatorController::class, 'store'])->name('upload');
     // import
     Route::post('operator/generate/import', function(){
-        Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
+        Artisan::call('db:seed', ['--class' => 'ImportMhsSeeder']);
         return redirect()->route('generate');
     })->name('import');
 });
