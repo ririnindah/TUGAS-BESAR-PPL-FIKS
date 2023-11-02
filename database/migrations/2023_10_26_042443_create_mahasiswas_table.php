@@ -21,12 +21,12 @@ return new class extends Migration
             $table->string('status');
             $table->string('departemen')->default('Informatika');
             $table->string('fakultas')->default('Sains dan Matematika');
-            $table->string('angkatan');
-            $table->string('jalur_masuk');
-            $table->string('provinsi');
-            $table->string('kabupaten');
-            $table->string('alamat');
-            $table->string('foto');
+            $table->string('angkatan')->nullable();
+            $table->string('jalur_masuk')->nullable();
+            $table->string('provinsi')->nullable();
+            $table->string('kabupaten')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('foto')->nullable();
             $table->foreignId('dsn_id');
             $table->rememberToken();
             $table->timestamps();

@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <title>SIMONE</title>
     <link rel="shortcut icon"  href='https://i.ibb.co/yBG6mSK/Simone-4.png'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    
+
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('style/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('style/css/bootstrap.css')}}" rel="stylesheet">
@@ -28,11 +29,11 @@
 
 </head>
 <body>
-  
+
 
 @yield('content')
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="{{asset('style/js/jquery.js')}}"></script>
 
 <!-- Bootstrap Core JavaScript -->

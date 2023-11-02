@@ -194,7 +194,7 @@
 
                         <div class="form-floating mb-3">
                             <label class="col-sm-4" for="nama">Nama</label>
-                            <input class="col-sm-8 @error('nama') is-invalid @enderror" name="nama" type="text" class="form-control" id="nama" value="{{ old('nama') }}">
+                            <input class="col-sm-8 @error('nama') is-invalid @enderror" name="nama" type="text" class="form-control" id="nama" value="{{ $attribute->nama }}">
                             @error('nama')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -202,41 +202,15 @@
 
                         <div class="form-floating mb-3">
                             <label class="col-sm-4 " for="email">Email</label>
-                            <input class="col-sm-8 @error('email') is-invalid @enderror" name="email" type="email" class="form-control" id="email" value="{{ old('email') }}">
+                            <input class="col-sm-8 @error('email') is-invalid @enderror" name="email" type="email" class="form-control" id="email" value="{{ $attribute->email }}">
                             @error('email')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-floating mb-3">
-                            <label class="col-sm-4 " for="provinsi">Provinsi</label>
-                            <input class="col-sm-8 @error('provinsi') is-invalid @enderror" name="provinsi" type="text" class="form-control" id="provinsi" value="{{ old('provinsi') }}">
-                            @error('provinsi')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <label class="col-sm-4 " for="kabupaten">Kabupaten</label>
-                            <input class="col-sm-8 @error('kabupaten') is-invalid @enderror" name="kabupaten" type="text" class="form-control" id="kabupaten" value="{{ old('kabupaten') }}">
-                            @error('kabupaten')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="able col-sm-4">
-                        <div class="form-floating mb-2">
-                            <label class="col-sm-4 " for="status">Status</label>
-                            <input class="col-sm-8 @error('status') is-invalid @enderror" name="status" type="status" class="form-control" id="status" value="{{ old('status') }}">
-                            @error('status')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-floating mb-3">
                             <label class="col-sm-4 " for="fakultas">Fakultas</label>
-                            <input class="col-sm-8 @error('fakultas') is-invalid @enderror" name="fakultas" type="fakultas" class="form-control" id="Fakultas" value="{{ old('fakultas') }}">
+                            <input disabled class="col-sm-8 @error('fakultas') is-invalid @enderror" name="fakultas" type="fakultas" class="form-control" id="Fakultas" value="{{ $attribute->fakultas }}">
                             @error('fakultas')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -244,15 +218,42 @@
 
                         <div class="form-floating mb-3">
                             <label class="col-sm-4 " for="departemen">Departemen</label>
-                            <input class="col-sm-8 @error('departemen') is-invalid @enderror" name="departemen" type="departemen" class="form-control" id="departemen" value="{{ old('departemen') }}">
+                            <input disabled class="col-sm-8 @error('departemen') is-invalid @enderror" name="departemen" type="departemen" class="form-control" id="departemen" value="{{ $attribute->departemen }}">
                             @error('departemen')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                    </div>
+
+                    <div class="able col-sm-4">
+                        <div class="form-floating mb-2">
+                            <label class="col-sm-4 " for="status">Status</label>
+                            <input class="col-sm-8 @error('status') is-invalid @enderror" name="status" type="status" class="form-control" id="status" value="{{ $attribute->status }}">
+                            @error('status')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="col-sm-4 " for="provinsi">Provinsi</label>
+                            <input class="col-sm-8 @error('provinsi') is-invalid @enderror" name="provinsi" type="text" class="form-control" id="provinsi" value="{{ $attribute->provinsi }}">
+                            @error('provinsi')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="col-sm-4 " for="kabupaten">Kabupaten</label>
+                            <input class="col-sm-8 @error('kabupaten') is-invalid @enderror" name="kabupaten" type="text" class="form-control" id="kabupaten" value="{{ $attribute->kabupaten }}">
+                            @error('kabupaten')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-floating mb-3">
                             <label class="col-sm-4 " for="jalur_masuk">Jalur Masuk</label>
-                            <input class="col-sm-8 @error('jalur_masuk') is-invalid @enderror" name="jalur_masuk"  class="form-control" id="jalur_masuk" value="{{ old('jalur_masuk') }}">
+                            <input class="col-sm-8 @error('jalur_masuk') is-invalid @enderror" name="jalur_masuk"  class="form-control" id="jalur_masuk" value="{{ $attribute->jalur_masuk }}">
                             @error('jalur_masuk')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -260,7 +261,7 @@
 
                         <div class="form-floating mb-3">
                             <label class="col-sm-4 " for="alamat">Alamat</label>
-                            <textarea class="col-sm-8 @error('alamat') is-invalid @enderror" name="alamat" name="alamat" class="form-control" id="alamat" cols="30" rows="5" value="{{ old('alamat') }}"></textarea>
+                            <textarea class="col-sm-8 @error('alamat') is-invalid @enderror" name="alamat" name="alamat" class="form-control" id="alamat" cols="30" rows="5" value="{{ $attribute->alamat }}"></textarea>
                             @error('alamat')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -277,4 +278,3 @@
 
 </body>
 @endsection
-

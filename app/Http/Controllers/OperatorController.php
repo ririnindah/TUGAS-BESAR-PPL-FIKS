@@ -55,7 +55,7 @@ class OperatorController extends Controller
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             $fileExtension = $file->getClientOriginalExtension();
-            $fileName = 'data' . '.' . $fileExtension;
+            $fileName = 'mhs' . '.' . $fileExtension;
             $validateData['file'] = $file->storeAs('ImportDataMhs', $fileName);
 
             // $validateData['file'] = $request->file('file')->store('ImportDataMhs');
