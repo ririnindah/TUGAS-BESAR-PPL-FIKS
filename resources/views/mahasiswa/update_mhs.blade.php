@@ -189,7 +189,7 @@
 
                         <div class="form-floating mt-3">
                             <label class="col-sm-4 " for="angkatan">Angkatan</label>
-                            <input class="col-sm-8" name="angkatan" type="text" class="form-control" id="angkatan" placeholder="{{ $attribute->angkatan }}" disabled>
+                            <input class="col-sm-8" name="angkatan" type="text" class="form-control" id="angkatan" value="{{ $attribute->angkatan }}">
                         </div>
 
                         <div class="form-floating mb-3">
@@ -210,7 +210,7 @@
 
                         <div class="form-floating mb-3">
                             <label class="col-sm-4 " for="fakultas">Fakultas</label>
-                            <input disabled class="col-sm-8 @error('fakultas') is-invalid @enderror" name="fakultas" type="fakultas" class="form-control" id="Fakultas" value="{{ $attribute->fakultas }}">
+                            <input class="col-sm-8 @error('fakultas') is-invalid @enderror" name="fakultas" type="fakultas" class="form-control" id="Fakultas" value="{{ $attribute->fakultas }}" disabled>
                             @error('fakultas')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -218,7 +218,7 @@
 
                         <div class="form-floating mb-3">
                             <label class="col-sm-4 " for="departemen">Departemen</label>
-                            <input disabled class="col-sm-8 @error('departemen') is-invalid @enderror" name="departemen" type="departemen" class="form-control" id="departemen" value="{{ $attribute->departemen }}">
+                            <input class="col-sm-8 @error('departemen') is-invalid @enderror" name="departemen" type="departemen" class="form-control" id="departemen" value="{{ $attribute->departemen }}" disabled>
                             @error('departemen')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -236,6 +236,14 @@
                         </div>
 
                         <div class="form-floating mb-3">
+                            {{-- <label class="col-sm-4" for="exampleFormControlSelect1">Provinsi</label>
+                            <select class="col-sm-8 form-control" name="provinsi" id="provinsi">
+                                <option  value="">Pilih Provinsi...</option>
+                                @foreach ($provinces as $provinsi)
+                                    <option value="{{ $provinsi->id }}" >{{ $provinsi->name }}</option>
+                                @endforeach
+                            </select> --}}
+
                             <label class="col-sm-4 " for="provinsi">Provinsi</label>
                             <input class="col-sm-8 @error('provinsi') is-invalid @enderror" name="provinsi" type="text" class="form-control" id="provinsi" value="{{ $attribute->provinsi }}">
                             @error('provinsi')
@@ -244,6 +252,11 @@
                         </div>
 
                         <div class="form-floating mb-3">
+                            {{-- <label class="col-sm-4" for="exampleFormControlSelect1">Kabupaten</label>
+                            <select class="col-sm-8 form-control" name="Kabupaten" id="Kabupaten">
+                                <option  value="">Pilih Kabupaten...</option>
+                            </select> --}}
+
                             <label class="col-sm-4 " for="kabupaten">Kabupaten</label>
                             <input class="col-sm-8 @error('kabupaten') is-invalid @enderror" name="kabupaten" type="text" class="form-control" id="kabupaten" value="{{ $attribute->kabupaten }}">
                             @error('kabupaten')
@@ -274,6 +287,34 @@
                 </form>
             </div>
     </div>
+
+    <script>
+        $(function(){
+            $.ajaxSetup({
+                headers:{
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            })
+        });
+
+        $(function (){
+            $('#provinsi').on('change', function(){
+                let id_provinsi = $('#provinsi').val();
+
+                $.ajax({
+                    type : 'POST'
+                    url:"{{ route('getKabupaten') }}",
+                    data:{
+                        id_provinsi:id_provinsi
+                    },
+                    cache:false,
+                    success:function(msg){
+                        $('#kabupaten').html(msg);
+                    }
+                });
+            })
+        });
+    </script>
 
 
 </body>

@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Province;
+use App\Models\Regency;
+use App\Models\District;
+use App\Models\Village;
 use App\Models\mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,8 +17,12 @@ class MahasiswaController extends Controller
     public function index()
     {
         $attribute=Auth::guard('mhs')->user();
-        // dd($attribute);
-        return view('mahasiswa/dashboard_mhs',['attribute'=>$attribute]);
+        if ($attribute->nim == null || $attribute->nama == null ||$attribute->email == null ||$attribute->fakultas == null ||$attribute->departemen == null ||$attribute->status == null ||$attribute->provinsi == null||$attribute->kabupaten == null ||$attribute->jalur_masuk == null || $attribute->alamat == null){
+            return redirect()->route('update_mhs');
+        }else{
+            // dd($attribute);
+            return view('mahasiswa/dashboard_mhs',['attribute'=>$attribute]);
+        }
     }
 
     public function irs()
@@ -70,11 +77,19 @@ class MahasiswaController extends Controller
      */
     public function edit(mahasiswa $mahasiswa)
     {
+        $provinces = Province::all();
+        $regencies = Regency::all();
+        // $districts = District::all();
+        // $villages = Village::all();
+
+
         $attribute=Auth::guard('mhs')->user();
         // dd($attribute);
         return view('mahasiswa/update_mhs', [
-            'mahsiswa' => $mahasiswa,
-            'attribute'=>$attribute
+            'mahasiswa' => $mahasiswa,
+            'attribute'=>$attribute,
+            'provinces'=>$provinces,
+            'regencies'=>$regencies
         ]);
     }
 
@@ -83,6 +98,9 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, mahasiswa $mahasiswa)
 {
+
+    $provinces = Province::all();
+    $regencies = Regency::all();
     $validateData = $request->validate([
         'foto' => 'image|max:1024', // Hilangkan 'file', karena 'image' sudah termasuk 'file'
         'nama' => 'required',
@@ -90,8 +108,9 @@ class MahasiswaController extends Controller
         'provinsi' => 'required',
         'kabupaten' => 'required',
         'status' => 'required',
-        'fakultas' => 'required',
-        'departemen' => 'required',
+        'angkatan' => 'required',
+        // 'fakultas' => 'required',
+        // 'departemen' => 'required',
         'jalur_masuk' => 'required',
         'alamat' => 'required'
     ]);
@@ -108,6 +127,11 @@ class MahasiswaController extends Controller
     return redirect()->route('dashboard_mhs');
 }
 
+    public function getKabupaten(Request $request)
+    {
+        $regencies = Regency::where("province_id",$request->province_id)->pluck("name","id");
+        return response()->json($regencies);
+    }
 
 
     /**
