@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('status');
             $table->char('nilai');
+            $table->string('semester');
             $table->foreignId('mhs_id');
-            $table->foreignId('smt_id');
             $table->timestamps();
         });
     }

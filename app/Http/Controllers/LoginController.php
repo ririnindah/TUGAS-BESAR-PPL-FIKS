@@ -28,23 +28,23 @@ class LoginController extends Controller
 
         // login berdasarkan role
         if(Auth::guard('opt')->attempt($credentials)){
-            // dd(Auth::guard('opt')->user()->id);
+            // dd(Auth::guard('opt')->user()->role);
             $request->session()->regenerate();
             return redirect()->intended('operator/dashboard_opt');
 
         }
         else if(Auth::guard('mhs')->attempt($credentials)){
-
+            // dd(Auth::guard('mhs')->user());
             $request->session()->regenerate();
             return redirect()->intended('mahasiswa/dashboard_mhs');
         }
         else if(Auth::guard('dsn')->attempt($credentials)){
-
+            // dd(Auth::guard('dsn')->user());
             $request->session()->regenerate();
             return redirect()->intended('dosenwali/dashboard_dsn');
         }
         else if(Auth::guard('dpt')->attempt($credentials)){
-
+            // dd(Auth::guard('dpt')->user());
             $request->session()->regenerate();
             return redirect()->intended('departemen/dashboard_dpt');
         }

@@ -13,7 +13,8 @@ class operator extends Model
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $guarded = [
-        'id'
+        'id',
+        'nip'
     ];
     protected $table = 'operators';
 

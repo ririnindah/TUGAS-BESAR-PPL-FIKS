@@ -21,7 +21,7 @@ class KhsFactory extends Factory
             'sks_komulatif' => $this->faker->numberBetween(18, 144),
             'ips' => $this->faker->randomFloat(1, 4),
             'ipk' => $this->faker->randomFloat(1, 4),
-            'smt_id' => $this->faker->numberBetween(1, 14),
+            'semester' => $this->faker->numberBetween(1, 14),
             'mhs_id' => $this->faker->numberBetween(1, 10),
         ];
     }

@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('dosenwalis', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('role')->default('dosenwali');
-            $table->integer('nip');
+            $table->bigInteger('nip')->unique();
             $table->string('nama');
+            $table->string('email')->unique();
+            $table->string('email_pribadi')->unique();
+            $table->string('password');
+            $table->string('nomor_tlp')->nullable();
+            $table->string('role')->default('dosenwali');
             $table->string('departemen')->default('Informatika');
             $table->string('fakultas')->default('Sains dan Matematika');
             $table->rememberToken();

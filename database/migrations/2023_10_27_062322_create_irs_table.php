@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('irs', function (Blueprint $table) {
             $table->id();
             $table->integer('jumlah_sks');
-            $table->string('file_irs');
+            $table->string('file_irs')->nullable();
+            $table->string('semester');
             $table->foreignId('mhs_id');
-            $table->foreignId('smt_id');
             $table->timestamps();
         });
     }

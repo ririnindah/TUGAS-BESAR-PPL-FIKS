@@ -17,8 +17,8 @@ return new class extends Migration
             $table->integer('sks_komulatif');
             $table->integer('ips');
             $table->integer('ipk');
-            $table->string('file_khs');
-            $table->foreignId('smt_id');
+            $table->string('file_khs')->nullable();
+            $table->string('semester');
             $table->foreignId('mhs_id');
             $table->timestamps();
         });

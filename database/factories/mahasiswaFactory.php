@@ -18,12 +18,13 @@ class mahasiswaFactory extends Factory
     public function definition(): array
     {
         return [
-            'email' => fake()->unique()->safeEmail(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'nim' => $this->faker->numberBetween(1, 9999),
             'nama'=> $this->faker->name,
-            'status'=> $this->faker->randomElement(['Aktif','Cuti', 'Mangkir', 'DO', 'Undur Diri']),
+            'email' => fake()->unique()->safeEmail(),
+            'email_pribadi' => fake()->unique()->safeEmail(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'angkatan'=>$this->faker->randomElement(['17', '18', '19', '20', '21', '22', '23']),
+            'status'=> $this->faker->randomElement(['Aktif','Cuti', 'Mangkir', 'DO', 'Undur Diri']),
             'jalur_masuk'=>$this->faker->randomElement(['SNMPTN', 'SBMPTN', 'Mandiri', 'SPBUB']),
             'provinsi'=>$this->faker->state,
             'kabupaten'=>$this->faker->city,

@@ -10,11 +10,13 @@ return new class extends Migration
     {
         Schema::create('operators', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('role')->default('operator');
-            $table->integer('nip');
+            $table->bigInteger('nip')->unique();
             $table->string('nama');
+            $table->string('email')->unique();
+            $table->string('email_pribadi')->unique();
+            $table->string('password');
+            $table->string('nomor_tlp')->nullable();
+            $table->string('role')->default('operator');
             $table->rememberToken();
             $table->timestamps();
         });

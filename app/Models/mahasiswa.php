@@ -13,7 +13,8 @@ class mahasiswa extends Model
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $guarded = [
-        'id'
+        'nim',
+        'id',
     ];
 
     // protected $fillable = ['foto', 'nama', 'email', 'provinsi', 'kabupaten', 'status', 'fakultas', 'departemen', 'jalur_masuk', 'alamat'];

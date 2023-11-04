@@ -19,8 +19,8 @@ class SkripsiFactory extends Factory
         return [
             'status' => $this->faker->randomElement(['Belum Ambil', 'Sudah Ambil', 'Lulus']),
             'nilai'=> $this->faker->randomElement(['A', 'B', 'C', 'D', 'E']),
+            'semester' => $this->faker->numberBetween(1, 14),
             'mhs_id' => $this->faker->numberBetween(1, 10),
-            'smt_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

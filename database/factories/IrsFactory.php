@@ -18,8 +18,8 @@ class IrsFactory extends Factory
     {
         return [
             'jumlah_sks' => $this->faker->numberBetween(1, 14),
-            'smt_id' => $this->faker->numberBetween(1, 10),
-            'mhs_id' => $this->faker->numberBetween(1, 10),
+            'semester' => $this->faker->numberBetween(1, 14),
+            'mhs_id' => $this->faker->numberBetween(1, 9999),
         ];
     }
 }

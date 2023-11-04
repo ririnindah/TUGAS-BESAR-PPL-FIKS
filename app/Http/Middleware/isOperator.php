@@ -16,6 +16,7 @@ class isOperator
      */
     public function handle(Request $request, Closure $next)
     {
+        // dd(!Auth::guard('opt')->check() || Auth::guard('opt')->user()->role !== 'operator');
         if (!Auth::guard('opt')->check() || Auth::guard('opt')->user()->role !== 'operator') {
             abort(403);
         }

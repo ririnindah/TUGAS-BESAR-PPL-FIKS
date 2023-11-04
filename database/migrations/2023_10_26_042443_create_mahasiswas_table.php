@@ -13,15 +13,17 @@ return new class extends Migration
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('role')->default('mahasiswa');
-            $table->integer('nim');
+            $table->bigInteger('nim')->unique();
             $table->string('nama');
+            $table->string('email')->unique();
+            $table->string('email_pribadi')->unique()->nullable();
+            $table->string('password');
+            $table->string('nomor_tlp')->nullable();
+            $table->string('role')->default('mahasiswa');
+            $table->string('angkatan');
             $table->string('status');
             $table->string('departemen')->default('Informatika');
             $table->string('fakultas')->default('Sains dan Matematika');
-            $table->string('angkatan')->nullable();
             $table->string('jalur_masuk')->nullable();
             $table->string('provinsi')->nullable();
             $table->string('kabupaten')->nullable();

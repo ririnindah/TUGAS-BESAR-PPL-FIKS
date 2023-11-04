@@ -13,7 +13,8 @@ class departemen extends Model
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $guarded = [
-        'id'
+        'nip',
+        'id',
     ];
     protected $table = 'departemens';
 
